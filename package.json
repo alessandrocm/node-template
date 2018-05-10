@@ -1,0 +1,48 @@
+{
+  "name": "node-template",
+  "version": "0.0.0",
+  "description": "node rest api",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "debug": "nodemon --inspect server/index.js",
+    "test": "mocha ./test/**/*.test.js"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "json"
+  ],
+  "author": "alessandrocm <Alessandro Catter-Martinez>",
+  "dependencies": {
+    "@sendgrid/mail": "6.2.1",
+    "bcrypt": "2.0.1",
+    "body-parser": "1.18.2",
+    "bunyan": "1.8.12",
+    "cors": "2.8.4",
+    "crypto": "1.0.1",
+    "dotenv": "4.0.0",
+    "express": "4.16.0",
+    "google-auth-library": "0.12.0",
+    "jsonwebtoken": "8.1.0",
+    "knex": "0.14.1",
+    "lodash": "4.17.10",
+    "morgan": "1.9.0",
+    "passport": "0.4.0",
+    "passport-google-oauth20": "1.0.0",
+    "pg": "7.4.0",
+    "shortid": "2.2.8",
+    "socket.io": "2.0.4",
+    "uuid": "3.1.0",
+    "validator": "9.1.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-mocha": "^5.0.0",
+    "gulp-sequence": "^0.4.6",
+    "mocha": "^5.0.1",
+    "yargs": "^10.0.3"
+  }
+}
