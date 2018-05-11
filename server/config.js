@@ -2,7 +2,9 @@
 const app = {
   name        : 'node-template',
   environment : process.env.NODE_ENV || 'development',
+  baseUrl     : process.env.BASE_URL || `localhost:${process.env.PORT || 3000}`,
   port        : process.env.PORT || 3000,
+  protocol    : process.env.PROTOCOL || 'http',
   website     : process.env.WEBSITE,
   appEmail    : process.env.EMAIL,
   logLevel    : process.env.LOG_LEVEL || 'info',

@@ -1,19 +1,32 @@
-const { omit, omitBy, isEmpty, isUndefined } = require('lodash');
+const { omit, omitBy, isEmpty, isUndefined, pick } = require('lodash');
 const { compose } = require('../../lib/funcs');
 const { query, transaction } = require('../../lib/database');
-const { first, select, insert, update, where, transacting } = require('./common');
+
+const usersList = [];
 
 function users() {
-  return query('users');
+  return usersList;
 }
 
 function whereEmailLike(email) {
   return (usersQuery) =>
     !email ?
       usersQuery :
-      usersQuery
-        .where('email', 'ilike', email)
+      usersQuery.filter(user => user.email === email)
   ;
+}
+
+function select(properties = []) {
+  return (usersQuery) =>
+    Promise.resolve(usersQuery.map(user => pick(user, properties)))
+  ;
+}
+
+function insert(newUser) {
+  return (list) => {
+    list.push(newUser);
+    return Promise.resolve(list);
+  };
 }
 
 function omitPassword(users) {

@@ -9,6 +9,7 @@ const cors = require('./middleware/cors');
 const services = require('./middleware/services');
 const errors = require('./middleware/errors');
 const notFound = require('./middleware/notFound');
+const staticFiles = require('./middleware/staticFiles');
 const database = require('./lib/database');
 const appConfig = require('./config').app;
 
@@ -35,6 +36,7 @@ class App {
     this.app.use(responses);
     this.app.use(services);
     this.app.use(morgan);
+    this.app.use(staticFiles());
   }
 
   routes() {

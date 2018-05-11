@@ -1,6 +1,5 @@
 const serviceFactory = require('./serviceFactory');
 const log = require('../lib/logs');
-const { dispatch } = require('../events/register');
 
 module.exports = class BaseService {
   constructor(context) {
@@ -11,10 +10,6 @@ module.exports = class BaseService {
 
   get contextId() {
     return this.context.identifier;
-  }
-
-  dispatch(event) {
-    dispatch({...event, identifier: this.contextId});
   }
 
   getInstance(name) {
