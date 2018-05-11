@@ -50,3 +50,6 @@ This task runs all the API tests in the `/test` directory.
 ```
 $ npm test
 ```
+
+### API Documentation
+With the api running go to `http://localhost:3000/api-docs` to view swagger documentation.

@@ -1,5 +1,4 @@
 const userData = require('./data/users');
-const passwordResets = require('./data/passwordReset');
 const BaseService = require('./baseService');
 const shortid = require('shortid');
 const bcrypt = require('../lib/security/bcrypt');
@@ -57,26 +56,6 @@ module.exports = class UserService extends BaseService {
 
   }
 
-  async requestPasswordReset(user_id) {
-
-    const token = shortid.generate();
-    const [error, reset] = await this.try(passwordResets.createResetAsync({user_id, token}));
-    return [error, reset];
-
-  }
-
-  async retrievePasswordReset(token) {
-
-    return await this.try(passwordResets.retrieveByTokenAsync(token));
-
-  }
-
-  async isValidPasswordReset(token) {
-
-    const [error, reset] = await this.retrievePasswordReset(token);
-    return [error, !!reset];
-
-  }
 
   async retrieveVerificationCode({user_id, code}) {
 
