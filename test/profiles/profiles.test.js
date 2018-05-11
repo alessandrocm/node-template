@@ -45,6 +45,7 @@ describe('sign up', () => {
         expect(actual.email).to.equal(user.email);
         expect(actual.first_name).to.equal(user.first_name);
         expect(actual.last_name).to.equal(user.last_name);
+        done();
 
       })
       .catch(done)
