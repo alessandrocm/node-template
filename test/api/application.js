@@ -1,4 +1,4 @@
-const App = require('../server/app');
+const App = require('../../server/app');
 let app;
 
 exports.instance = function() {
