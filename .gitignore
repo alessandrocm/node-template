@@ -58,3 +58,7 @@ typings/
 # dotenv environment variables file
 .env
 .env.test
+
+#test outputs
+test/bdd/**/errorShots/*
+test/bdd/**/output/*

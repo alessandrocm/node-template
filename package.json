@@ -6,7 +6,11 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "debug": "nodemon --inspect server/index.js",
-    "test": "mocha ./test/**/*.test.js"
+    "test": "mocha ./test/api/**/*.test.js",
+    "bdd": "wdio wdio.conf.js"
+  },
+  "nodemonConfig": {
+    "ignore": ["test/*"]
   },
   "keywords": [
     "rest",
@@ -40,9 +44,16 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
+    "chromedriver": "^2.38.3",
     "gulp": "^4.0.0",
     "gulp-sequence": "^0.4.6",
     "mocha": "^5.1.1",
+    "wdio-chromedriver-service": "^0.1.3",
+    "wdio-cucumber-framework": "^2.1.0",
+    "wdio-json-reporter": "^0.3.1",
+    "wdio-phantomjs-service": "^0.2.2",
+    "wdio-selenium-standalone-service": "0.0.10",
+    "webdriverio": "^4.12.0",
     "yargs": "^10.0.3"
   }
 }
