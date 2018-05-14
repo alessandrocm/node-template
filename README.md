@@ -46,9 +46,16 @@ Is it running? Good work, go ahead and pat yourself on the back. Well done sir o
 
 __Test Tasks__
 
-This task runs all the API tests in the `/test` directory.
+This task runs all the API tests in the `/test/api` directory.
 ```
 $ npm test
+```
+
+__BDD Test Tasks__
+
+This task runs all the BDD tests in the `/test/bdd` directory.
+```
+$ npm run bdd
 ```
 
 ### API Documentation
